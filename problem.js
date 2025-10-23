@@ -13,3 +13,32 @@ CHALLENGE
 - If the password is less than 5 characters, log out "Your password is too short!".
 */
 
+function checkPassword(input, password) {
+    if (password < 5) {
+        console.log("Your password is too short!");
+    }
+
+    if ((password === "forgot" || password === "reset") && input === password) {
+        console.log("Access Granted");
+        console.log(
+            "This password you set should not be used because it glitches the system"
+        );
+    }
+
+    if (password === true) {
+        console.log("Access Granted!");
+    } else if (password === false) {
+        console.log("Access Denied!");
+    }
+
+    if (input === "forgot") {
+        console.log("Here is a hint");
+    } else if (input === "reset") {
+        console.log("Let's reset your account");
+    }
+}
+
+checkPassword("forgot", "forgot");
+checkPassword("reset", "reset");
+checkPassword("true", "true");
+checkPassword("true", "false");
